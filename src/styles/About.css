@@ -1,0 +1,291 @@
+/* About Section - Theme Support */
+.about-section {
+  padding: 100px 0;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.about-text {
+  max-width: 600px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  color: var(--text-secondary);
+}
+
+.about-intro {
+  font-weight: 500;
+  color: var(--color-accent) !important;
+}
+
+.about-text span {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.about-text strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Hobbies List */
+.about-hobbies {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about-hobbies li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.about-hobbies li:hover {
+  transform: translateX(5px);
+  color: var(--color-secondary);
+}
+
+/* Quote Styling */
+.quote {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 17px;
+  padding: 15px;
+  border-left: 4px solid var(--color-primary);
+  background: var(--glass-bg);
+  border-radius: 8px;
+}
+
+/* RIGHT WRAPPER */
+.about-right-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* WHAT I DO CARD */
+.about-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 30px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  border-color: var(--color-primary);
+  background: var(--glass-bg);
+  box-shadow: 0 10px 30px var(--card-shadow);
+}
+
+.about-card h3 {
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-card li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.about-card li:hover {
+  color: var(--color-secondary);
+  transform: translateX(5px);
+}
+
+/* FLOATING CARD */
+.floating-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.floating-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 25px 50px var(--card-shadow);
+}
+
+.floating-card h3 {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.floating-card p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON (if needed) */
+.about-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-right-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .about-card,
+  .floating-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .about-hobbies {
+    text-align: left;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .floating-card {
+    padding: 22px;
+  }
+
+  .about-card li {
+    font-size: 14px;
+  }
+
+  .floating-card p {
+    font-size: 14px;
+  }
+
+  .quote {
+    font-size: 14px;
+  }
+
+  .about-hobbies li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 70px 15px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .about-hobbies li {
+    font-size: 14px;
+  }
+
+  .about-card,
+  .floating-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .about-card h3,
+  .floating-card h3 {
+    font-size: 18px;
+  }
+
+  .floating-card p {
+    font-size: 13.5px;
+  }
+
+  .quote {
+    margin-top: 25px;
+    font-size: 13.5px;
+  }
+}

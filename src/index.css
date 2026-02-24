@@ -1,0 +1,180 @@
+/* Theme Variables - Day/Night Mode Support */
+:root {
+  /* Light Mode - Ocean Blue & Cream */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-gradient: linear-gradient(135deg, #f8fafc, #e0f2fe, #dbeafe);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  
+  --color-primary: #0369a1;
+  --color-secondary: #0284c7;
+  --color-accent: #0ea5e9;
+  --color-light: #38bdf8;
+  
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(3, 105, 161, 0.2);
+  --card-shadow: rgba(3, 105, 161, 0.1);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(3, 105, 161, 0.2);
+  
+  --skill-bar-bg: rgba(3, 105, 161, 0.15);
+  --skill-bar-shadow: rgba(3, 105, 161, 0.3);
+  
+  --scrollbar-track: #e0f2fe;
+  --scrollbar-thumb: linear-gradient(180deg, #0369a1, #0284c7);
+}
+
+/* Dark Mode - Current Blue Theme */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e3a8a, #1e40af);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #e0f2fe;
+  --text-tertiary: #cbd5e1;
+  
+  --color-primary: #3b82f6;
+  --color-secondary: #60a5fa;
+  --color-accent: #93c5fd;
+  --color-light: #bfdbfe;
+  
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(59, 130, 246, 0.3);
+  --card-shadow: rgba(59, 130, 246, 0.2);
+  
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(59, 130, 246, 0.2);
+  
+  --skill-bar-bg: rgba(255, 255, 255, 0.15);
+  --skill-bar-shadow: rgba(59, 130, 246, 0.5);
+  
+  --scrollbar-track: #0f172a;
+  --scrollbar-thumb: linear-gradient(180deg, #3b82f6, #1e40af);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px;
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  border-color: var(--color-primary);
+  background: var(--card-bg);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Skill box styling */
+.skill-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 25px var(--card-shadow);
+}
+
+/* Project card styling */
+.project-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px var(--card-shadow);
+  background: var(--glass-bg);
+}
+
+/* Container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Utility classes */
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-secondary), var(--color-primary));
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

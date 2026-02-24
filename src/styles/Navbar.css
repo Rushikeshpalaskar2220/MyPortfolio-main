@@ -1,0 +1,216 @@
+/* Navbar - Theme Support with CSS Variables */
+.custom-navbar {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 14px 0;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  border-bottom: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+/* Container adjustments */
+.custom-navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.logo-text:hover {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.05);
+}
+
+/* Right side (Theme toggle + Menu button) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  order: 3;
+}
+
+/* Nav links container */
+.navbar-collapse {
+  order: 2;
+  flex-grow: 1;
+}
+
+.nav-links {
+  gap: 28px;
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover color */
+.nav-link:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--card-shadow);
+}
+
+/* Hover underline */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact button special styling */
+.contact-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  box-shadow: 0 6px 20px var(--card-shadow);
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+/* Remove underline from contact button */
+.contact-btn::after {
+  display: none;
+}
+
+/* Mobile toggler button */
+.navbar-toggler {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 24px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+  display: none; /* Hidden on desktop */
+}
+
+.navbar-toggler:hover {
+  background: var(--glass-bg);
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 15px var(--card-shadow);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--card-shadow);
+}
+
+/* Desktop - Hide mobile menu button */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+
+  .navbar-collapse {
+    order: 4;
+    width: 100%;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px var(--card-shadow);
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background: var(--glass-bg);
+    transform: translateX(5px);
+  }
+
+  .contact-btn {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Active link indicator */
+.nav-link.active {
+  color: var(--color-secondary) !important;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] .custom-navbar {
+  background: rgba(248, 250, 252, 0.95);
+  box-shadow: 0 2px 15px rgba(3, 105, 161, 0.08);
+}
+
+[data-theme="light"] .nav-link {
+  font-weight: 600;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .custom-navbar {
+  background: rgba(15, 23, 42, 0.9);
+}

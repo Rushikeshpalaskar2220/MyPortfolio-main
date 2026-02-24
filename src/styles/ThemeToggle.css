@@ -1,0 +1,79 @@
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 25px var(--card-shadow);
+  border-color: var(--color-secondary);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Theme Icons */
+.theme-icon {
+  font-size: 20px;
+  transition: all 0.4s ease;
+}
+
+.sun-icon {
+  color: var(--color-secondary);
+  animation: rotateSun 20s linear infinite;
+}
+
+.moon-icon {
+  color: var(--color-primary);
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes rotateSun {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px var(--color-primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px var(--color-secondary));
+  }
+}
+
+/* Hover effects */
+.theme-toggle-btn:hover .sun-icon {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 10px #fbbf24);
+}
+
+.theme-toggle-btn:hover .moon-icon {
+  color: var(--color-accent);
+  filter: drop-shadow(0 0 10px var(--color-accent));
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .theme-icon {
+    font-size: 18px;
+  }
+}

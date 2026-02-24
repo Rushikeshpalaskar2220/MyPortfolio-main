@@ -1,0 +1,611 @@
+/* Enhanced Certifications & Research Section - Theme Support */
+.certifications-section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+}
+
+.certifications-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.research-header {
+  margin-top: 100px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   CERTIFICATIONS GRID
+=========================== */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* Certification Card */
+.certification-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.certification-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 50px var(--card-shadow);
+  transform: translateY(-10px);
+}
+
+/* Award cards - golden glow */
+.certification-card.award:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 15px 50px rgba(251, 191, 36, 0.4);
+}
+
+/* Certificate Icon Badge */
+.cert-icon-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+/* Award Icon Badge - Golden with pulse */
+.cert-icon-badge.award {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.5);
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.7);
+    transform: scale(1.05);
+  }
+}
+
+.certification-card:hover .cert-icon-badge {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.certification-card.award:hover .cert-icon-badge {
+  transform: scale(1.15) rotate(10deg);
+}
+
+/* Certificate Image */
+.cert-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from cover to contain - shows full image */
+  transition: transform 0.5s ease;
+  padding: 10px; /* Add slight padding for breathing room */
+}
+
+.certification-card:hover .cert-image {
+  transform: scale(1.05); /* Reduced from 1.1 to 1.05 - less zoom on hover */
+}
+
+/* Verified Overlay - for certificates */
+.cert-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(34, 197, 94, 0.95);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(34, 197, 94, 0.5);
+}
+
+/* Award Overlay - golden style */
+.cert-overlay.award-overlay {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.8);
+  }
+}
+
+.verified-icon,
+.award-icon {
+  font-size: 14px;
+}
+
+/* Certificate Content */
+.cert-content {
+  padding: 25px;
+}
+
+.cert-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Award issuers - golden color */
+.certification-card.award .cert-issuer {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.cert-date {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  margin-bottom: 15px;
+}
+
+.cert-credential {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background: var(--glass-bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Verify Button - for certificates */
+.verify-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.verify-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--card-shadow);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+/* Award Badge Text - for awards instead of verify button */
+.award-badge-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+}
+
+.award-badge-icon {
+  font-size: 16px;
+  animation: rotate-trophy 3s ease-in-out infinite;
+}
+
+@keyframes rotate-trophy {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* ===========================
+   RESEARCH PAPERS SECTION
+=========================== */
+.research-papers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Research Card */
+.research-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 35px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--card-shadow), transparent);
+  transition: left 0.6s ease;
+}
+
+.research-card:hover::before {
+  left: 100%;
+}
+
+.research-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 50px var(--card-shadow);
+  transform: translateY(-5px);
+}
+
+/* Paper Type Badge */
+.paper-type-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  z-index: 2;
+}
+
+.paper-type-badge.ieee {
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+}
+
+.paper-type-badge.scopus {
+  background: linear-gradient(135deg, #ff6600, #cc5200);
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+}
+
+.paper-type-badge svg {
+  font-size: 18px;
+}
+
+/* Research Content */
+.research-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Paper Preview Image */
+.paper-preview {
+  flex-shrink: 0;
+  width: 200px;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--card-border);
+  box-shadow: 0 8px 20px var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+}
+
+.paper-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from cover to contain - shows full paper */
+  transition: transform 0.5s ease;
+  padding: 8px; /* Add slight padding */
+}
+
+.research-card:hover .paper-preview img {
+  transform: scale(1.03); /* Reduced from 1.05 - gentler zoom */
+}
+
+/* Paper Details */
+.paper-details {
+  flex: 1;
+}
+
+.paper-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.paper-authors {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.paper-journal {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.paper-abstract {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.paper-meta {
+  margin-bottom: 20px;
+}
+
+.paper-doi {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  background: var(--glass-bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Paper Actions */
+.paper-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.paper-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.paper-btn.primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.paper-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--card-shadow);
+}
+
+.paper-btn.secondary {
+  background: var(--glass-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--card-border);
+}
+
+.paper-btn.secondary:hover {
+  background: var(--card-bg);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .cert-overlay {
+  background: rgba(34, 197, 94, 1);
+}
+
+[data-theme="light"] .cert-overlay.award-overlay {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+[data-theme="light"] .cert-image-wrapper {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #f8fafc; /* Light background for better visibility */
+}
+
+[data-theme="light"] .paper-preview {
+  background: #f8fafc; /* Light background for papers too */
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 992px) {
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .research-content {
+    flex-direction: column;
+  }
+
+  .paper-preview {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cert-image-wrapper {
+    height: 200px;
+  }
+
+  .cert-image {
+    padding: 8px; /* Slightly less padding on mobile */
+  }
+
+  .cert-content {
+    padding: 20px;
+  }
+
+  .research-header {
+    margin-top: 60px;
+  }
+
+  .research-card {
+    padding: 25px;
+  }
+
+  .paper-type-badge {
+    position: static;
+    margin-bottom: 20px;
+    display: inline-flex;
+  }
+
+  .paper-title {
+    font-size: 1.3rem;
+  }
+
+  .paper-actions {
+    flex-direction: column;
+  }
+
+  .paper-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .cert-icon-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .cert-image-wrapper {
+    height: 180px;
+  }
+
+  .cert-image {
+    padding: 6px; /* Even less padding on small mobile */
+  }
+
+  .cert-content {
+    padding: 18px;
+  }
+
+  .cert-title {
+    font-size: 1.1rem;
+  }
+
+  .research-card {
+    padding: 20px;
+  }
+
+  .paper-title {
+    font-size: 1.2rem;
+  }
+
+  .paper-abstract {
+    font-size: 0.9rem;
+  }
+}

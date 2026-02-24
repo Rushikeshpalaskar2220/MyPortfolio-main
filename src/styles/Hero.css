@@ -1,0 +1,441 @@
+/* Hero Section - With Floating Tech Icons */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background particles effect */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--card-shadow), transparent);
+  border-radius: 50%;
+  top: -250px;
+  right: -250px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--card-shadow), transparent);
+  border-radius: 50%;
+  bottom: -200px;
+  left: -200px;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 30px); }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* LEFT - Text Content */
+.hero-text {
+  max-width: 600px;
+}
+
+.intro-text {
+  font-size: 22px;
+  opacity: 0.9;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+}
+
+.hero-name {
+  font-size: 60px;
+  font-weight: 800;
+  margin: 10px 0;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.hero-name span {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-role {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-height: 40px;
+}
+
+.hero-role span {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.9;
+  color: var(--text-secondary);
+}
+
+.hero-btn1 {
+  margin-top: 30px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #ffffff;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 30px var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-btn1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--card-shadow);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  border-color: var(--color-accent);
+}
+
+/* RIGHT - Image with Floating Tech Icons */
+.hero-img-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Container for floating icons */
+.floating-tech-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile Image */
+.hero-img-border {
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 10px 40px var(--card-shadow);
+  transition: all 0.3s ease;
+  animation: pulse 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 40px var(--card-shadow);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 15px 50px var(--card-shadow);
+    transform: scale(1.02);
+  }
+}
+
+.hero-img-border:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px var(--card-shadow);
+}
+
+.hero-img-border img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-secondary);
+}
+
+/* ===========================
+   FLOATING TECH ICONS
+=========================== */
+.floating-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+  border-color: var(--icon-color);
+  border-radius: 50%;
+  box-shadow: 0 8px 25px var(--card-shadow);
+  transition: all 0.3s ease;
+  animation: orbit 20s linear infinite, float-up-down 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Position icons in a circle around the image */
+.floating-icon:nth-child(2) { 
+  animation-delay: 0s;
+  --orbit-angle: 0deg;
+}
+.floating-icon:nth-child(3) { 
+  animation-delay: -2.5s;
+  --orbit-angle: 45deg;
+}
+.floating-icon:nth-child(4) { 
+  animation-delay: -5s;
+  --orbit-angle: 90deg;
+}
+.floating-icon:nth-child(5) { 
+  animation-delay: -7.5s;
+  --orbit-angle: 135deg;
+}
+.floating-icon:nth-child(6) { 
+  animation-delay: -10s;
+  --orbit-angle: 180deg;
+}
+.floating-icon:nth-child(7) { 
+  animation-delay: -12.5s;
+  --orbit-angle: 225deg;
+}
+.floating-icon:nth-child(8) { 
+  animation-delay: -15s;
+  --orbit-angle: 270deg;
+}
+.floating-icon:nth-child(9) { 
+  animation-delay: -17.5s;
+  --orbit-angle: 315deg;
+}
+
+/* Orbit animation */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(180px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(180px) rotate(-360deg);
+  }
+}
+
+/* Up and down floating */
+@keyframes float-up-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Hover effect on icons */
+.floating-icon:hover {
+  transform: scale(1.2) !important;
+  box-shadow: 0 12px 35px var(--card-shadow);
+  border-width: 3px;
+  z-index: 10;
+}
+
+/* Glow effect for icons */
+.floating-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] .hero-btn1 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+[data-theme="light"] .intro-text {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+[data-theme="light"] .floating-icon {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 100px 20px 60px;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-name {
+    font-size: 42px;
+  }
+
+  .hero-role {
+    font-size: 22px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .floating-tech-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-img-border img {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* Smaller orbit on tablet */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+
+  .floating-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 18px;
+  }
+
+  .hero-name {
+    font-size: 36px;
+  }
+
+  .hero-role {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .hero-btn1 {
+    width: 80%;
+    text-align: center;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .floating-tech-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-img-border img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Even smaller orbit on mobile */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(140px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(140px) rotate(-360deg);
+    }
+  }
+
+  .floating-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 90px;
+  }
+
+  .hero-name {
+    font-size: 30px;
+  }
+
+  .hero-role {
+    font-size: 18px;
+  }
+
+  .hero-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .hero-btn1 {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .floating-tech-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero-img-border img {
+    width: 170px;
+    height: 170px;
+  }
+
+  /* Smallest orbit for small mobile */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(130px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(130px) rotate(-360deg);
+    }
+  }
+
+  .floating-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
