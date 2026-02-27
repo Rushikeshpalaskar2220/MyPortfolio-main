@@ -36,7 +36,7 @@ const Hero = () => {
           <h5 className="intro-text">Hi, I am</h5>
 
           <h1 className="hero-name">
-            Rushi <span>Palaskar</span>
+            Rushikesh <span>Palaskar</span>
           </h1>
 
           <h3 className="hero-role">
