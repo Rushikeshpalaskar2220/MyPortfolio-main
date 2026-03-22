@@ -9,7 +9,7 @@ import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import Experience from './Components/Experience'
 import Certifications from './Components/Certifications'
-
+import ParticleBackground from './Components/backgrounds/ParticleBackground';
 
 function App() {
   const [count, setCount] = useState(0)
